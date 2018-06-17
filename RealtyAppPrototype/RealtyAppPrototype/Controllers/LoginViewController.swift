@@ -28,18 +28,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         
-//        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.changeCarousel), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.changeCarousel), userInfo: nil, repeats: true)
 
 //        backGround.animationImages = backGroundImageArray
 //        backGround.animationDuration = 3
 //        backGround.ani
 //        backGround.startAnimating()
         
-        UIView.transition(with: self.backGround,
-                          duration:1,
-                          options: .transitionCrossDissolve,
-                          animations: { self.backGround.image = self.backGroundImageArray[self.backGroundImageArrayIndex] },
-                          completion: nil)
+
         
     }
     
@@ -52,30 +48,28 @@ class LoginViewController: UIViewController {
         
         print("counted")
         
-        if backGroundImageArrayIndex > 2 {backGroundImageArrayIndex = 0}
-//
-//        UIView.animate(withDuration: 0.3, animations: {
-//            self.backGround.image = self.backGroundImageArray[self.backGroundImageArrayIndex]
-//        })
+        // reset backgroundimagearrayindex to 0 if greater than 2, otherwise increment
+        if self.backGroundImageArrayIndex == 2{
+            self.backGroundImageArrayIndex = 0
+        }
+        else{
+            self.backGroundImageArrayIndex = self.backGroundImageArrayIndex + 1
+        }
         
-        UIView.transition(with: self.backGround,
-                          duration:1,
-                          options: .transitionCrossDissolve,
-                          animations: { self.backGround.image = self.backGroundImageArray[self.backGroundImageArrayIndex] },
-                          completion: nil)
+        UIView.transition(with: self.backGround, duration:1, options: .transitionCrossDissolve,
+                          animations: {
+                            
+                            // change to new background image
+                            self.backGround.image = self.backGroundImageArray[self.backGroundImageArrayIndex]
+                            
+        }, completion: { (finished: Bool) -> () in
+            
+            
+        })
         
-//        UIView.transition(with: imageView,
-//                          duration: 0.75,
-//                          options: .transitionCrossDissolve,
-//                          animations: { self.imageView.image = toImage },
-//                          completion: nil)
-
-        
-        backGroundImageArrayIndex = backGroundImageArrayIndex + 1
     
     }
 
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
