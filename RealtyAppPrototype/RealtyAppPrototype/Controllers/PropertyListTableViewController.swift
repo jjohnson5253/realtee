@@ -19,7 +19,7 @@ class PropertyListTableViewController: UITableViewController {
   var items: [PropertyItem] = []
   var user: User!
   var userCountBarButtonItem: UIBarButtonItem!
-  let ref = Database.database().reference(withPath: "property-items")
+  let ref = Database.database().reference(withPath: "properties")
   let usersRef = Database.database().reference(withPath: "online")
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -68,6 +68,10 @@ class PropertyListTableViewController: UITableViewController {
         self.userCountBarButtonItem?.title = "0"
       }
     })
+    
+    ref.observe(.value, with: { snapshot in
+        print(snapshot.value as Any)
+    })
   }
   
   // MARK: UITableView Delegate methods
@@ -80,7 +84,7 @@ class PropertyListTableViewController: UITableViewController {
     let propertyItem = items[indexPath.row]
     
     cell.textLabel?.text = propertyItem.name
-    cell.detailTextLabel?.text = propertyItem.addedByUser
+//    cell.detailTextLabel?.text = propertyItem.addedByUser
     
     toggleCellCheckbox(cell, isCompleted: propertyItem.completed)
     
@@ -120,36 +124,36 @@ class PropertyListTableViewController: UITableViewController {
     }
   }
   
-  // MARK: Add Item  
-  @IBAction func addButtonDidTouch(_ sender: AnyObject) {
-    let alert = UIAlertController(title: "Property Item",
-                                  message: "Add an Item",
-                                  preferredStyle: .alert)
-    
-    let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-      guard let textField = alert.textFields?.first,
-        let text = textField.text else { return }
-      
-
-      let propertyItem = PropertyItem(name: text,
-                                    addedByUser: self.user.email,
-                                    completed: false)
-
-      let propertyItemRef = self.ref.child(text.lowercased())
-      
-      propertyItemRef.setValue(propertyItem.toAnyObject())
-    }
-    
-    let cancelAction = UIAlertAction(title: "Cancel",
-                                     style: .cancel)
-    
-    alert.addTextField()
-    
-    alert.addAction(saveAction)
-    alert.addAction(cancelAction)
-    
-    present(alert, animated: true, completion: nil)
-  }
+//  // MARK: Add Item  
+//  @IBAction func addButtonDidTouch(_ sender: AnyObject) {
+//    let alert = UIAlertController(title: "Property Item",
+//                                  message: "Add an Item",
+//                                  preferredStyle: .alert)
+//    
+//    let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+//      guard let textField = alert.textFields?.first,
+//        let text = textField.text else { return }
+//      
+//
+//      let propertyItem = PropertyItem(name: text,
+//                                    addedByUser: self.user.email,
+//                                    completed: false)
+//
+//      let propertyItemRef = self.ref.child(text.lowercased())
+//      
+//      propertyItemRef.setValue(propertyItem.toAnyObject())
+//    }
+//    
+//    let cancelAction = UIAlertAction(title: "Cancel",
+//                                     style: .cancel)
+//    
+//    alert.addTextField()
+//    
+//    alert.addAction(saveAction)
+//    alert.addAction(cancelAction)
+//    
+//    present(alert, animated: true, completion: nil)
+//  }
   
   @objc func userCountButtonDidTouch() {
     performSegue(withIdentifier: listToUsers, sender: nil)
