@@ -14,21 +14,15 @@
         <!--Login View Controller-->
         <scene sceneID="fO9-1H-DXz">
             <objects>
-                <viewController id="aBN-rm-fMQ" customClass="LoginViewController" customModule="Grocr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aBN-rm-fMQ" customClass="LoginViewController" customModule="RealtyAppPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w7H-JN-8OZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grocr" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNm-Oe-kbi">
-                                <rect key="frame" x="104.5" y="72" width="166" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="QTL-Yl-A3y"/>
-                                    <constraint firstAttribute="width" constant="166" id="d0h-Tr-BGL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="64"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="carousel1" translatesAutoresizingMaskIntoConstraints="NO" id="51z-SY-okG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lBT-dq-Cqj">
                                 <rect key="frame" x="70" y="247" width="235" height="30"/>
                                 <constraints>
@@ -96,10 +90,20 @@
                                     <action selector="loginDidTouch:" destination="aBN-rm-fMQ" eventType="touchUpInside" id="fNB-Bg-eYy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Realtee" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNm-Oe-kbi">
+                                <rect key="frame" x="108" y="42" width="158" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="QTL-Yl-A3y"/>
+                                    <constraint firstAttribute="width" constant="158" id="d0h-Tr-BGL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="49"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.29204627869999999" green="0.65247046949999998" blue="0.49190118910000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lBT-dq-Cqj" firstAttribute="top" secondItem="hNm-Oe-kbi" secondAttribute="bottom" constant="116" id="0T9-UZ-w3p"/>
+                            <constraint firstItem="lBT-dq-Cqj" firstAttribute="top" secondItem="hNm-Oe-kbi" secondAttribute="bottom" constant="146" id="0T9-UZ-w3p"/>
                             <constraint firstItem="3eK-or-MhY" firstAttribute="top" secondItem="QZM-kc-UKr" secondAttribute="bottom" constant="20" id="3fx-eZ-59S"/>
                             <constraint firstItem="QZM-kc-UKr" firstAttribute="leading" secondItem="w7H-JN-8OZ" secondAttribute="leadingMargin" constant="54" id="7LT-ob-oFu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lBT-dq-Cqj" secondAttribute="trailing" constant="54" id="EHw-8B-nsf"/>
@@ -111,12 +115,13 @@
                             <constraint firstItem="jN4-Ze-t1e" firstAttribute="centerX" secondItem="hNm-Oe-kbi" secondAttribute="centerX" id="fSo-jc-ulp"/>
                             <constraint firstItem="lBT-dq-Cqj" firstAttribute="leading" secondItem="w7H-JN-8OZ" secondAttribute="leadingMargin" constant="54" id="hoz-p5-jBf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QZM-kc-UKr" secondAttribute="trailing" constant="54" id="jmI-iu-e7D"/>
-                            <constraint firstItem="hNm-Oe-kbi" firstAttribute="top" secondItem="jN4-Ze-t1e" secondAttribute="top" constant="52" id="veQ-Se-Shj"/>
+                            <constraint firstItem="hNm-Oe-kbi" firstAttribute="top" secondItem="jN4-Ze-t1e" secondAttribute="top" constant="22" id="veQ-Se-Shj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3eK-or-MhY" secondAttribute="trailing" constant="54" id="zZU-H2-en2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jN4-Ze-t1e"/>
                     </view>
                     <connections>
+                        <outlet property="backGround" destination="51z-SY-okG" id="fgU-Is-Zu5"/>
                         <outlet property="textFieldLoginEmail" destination="lBT-dq-Cqj" id="RDh-g6-z5L"/>
                         <outlet property="textFieldLoginPassword" destination="QZM-kc-UKr" id="p9b-vw-hgl"/>
                         <segue destination="xsS-AN-7tp" kind="presentation" identifier="LoginToList" id="7NQ-Ma-e3h"/>
@@ -124,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nnc-Qf-jKi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="287" y="399"/>
+            <point key="canvasLocation" x="285.60000000000002" y="398.95052473763121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9dv-9K-s3c">
@@ -153,7 +158,7 @@
         <!--Grocery List-->
         <scene sceneID="RTs-NM-h4Q">
             <objects>
-                <tableViewController title="Grocery List" id="FZl-HD-pmQ" customClass="GroceryListTableViewController" customModule="Grocr" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Grocery List" id="FZl-HD-pmQ" customClass="GroceryListTableViewController" customModule="RealtyAppPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="0HK-SB-ltN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,7 +212,7 @@
         <!--Online-->
         <scene sceneID="E29-Yi-IlY">
             <objects>
-                <tableViewController title="Online" id="xCw-pY-j1L" customClass="OnlineUsersTableViewController" customModule="Grocr" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Online" id="xCw-pY-j1L" customClass="OnlineUsersTableViewController" customModule="RealtyAppPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="guf-7V-atF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -277,7 +282,7 @@
         <!--Detail-->
         <scene sceneID="Xc3-uw-W11">
             <objects>
-                <viewController title="Detail" id="DUj-sg-MWZ" customClass="DetailViewController" customModule="CandySearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="DUj-sg-MWZ" customClass="DetailViewController" customModule="RealtyAppPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Mt-qO-W4f"/>
                         <viewControllerLayoutGuide type="bottom" id="r0a-Gx-toh"/>
@@ -333,7 +338,7 @@
         <!--Master-->
         <scene sceneID="8yX-3J-Nxm">
             <objects>
-                <viewController title="Master" id="SoB-Hh-O2R" customClass="MasterViewController" customModule="CandySearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Master" id="SoB-Hh-O2R" customClass="MasterViewController" customModule="RealtyAppPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uu5-vE-PrG"/>
                         <viewControllerLayoutGuide type="bottom" id="SVU-Ko-c0V"/>
@@ -376,7 +381,7 @@
                                     <outlet property="delegate" destination="SoB-Hh-O2R" id="Z3k-HC-ef0"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1c-4C-Xl2" customClass="SearchFooter" customModule="CandySearch" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1c-4C-Xl2" customClass="SearchFooter" customModule="RealtyAppPrototype" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -425,5 +430,6 @@
     </scenes>
     <resources>
         <image name="Inline-Logo" width="16" height="16"/>
+        <image name="carousel1" width="752" height="1342"/>
     </resources>
 </document>
