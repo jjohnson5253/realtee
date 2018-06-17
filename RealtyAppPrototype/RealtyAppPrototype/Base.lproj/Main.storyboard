@@ -159,10 +159,10 @@
             </objects>
             <point key="canvasLocation" x="1053" y="399"/>
         </scene>
-        <!--Grocery List-->
+        <!--Property List-->
         <scene sceneID="RTs-NM-h4Q">
             <objects>
-                <tableViewController title="Grocery List" id="FZl-HD-pmQ" customClass="GroceryListTableViewController" customModule="RealtyAppPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Property List" id="FZl-HD-pmQ" customClass="PropertyListTableViewController" customModule="RealtyAppPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="0HK-SB-ltN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -198,7 +198,7 @@
                             <outlet property="delegate" destination="FZl-HD-pmQ" id="X1k-I0-w22"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Grocery List" id="IEK-sX-ls6">
+                    <navigationItem key="navigationItem" title="Property List" id="IEK-sX-ls6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="XHc-G8-LbP">
                             <connections>
                                 <action selector="addButtonDidTouch:" destination="FZl-HD-pmQ" id="c9S-uC-fFd"/>

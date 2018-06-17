@@ -7,36 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6CEA04EDC46721B6205E5471 /* Pods_RealtyAppPrototype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFC634FBB6E502FEE62DE52 /* Pods_RealtyAppPrototype.framework */; };
+		25908797425EC507301F6D1C /* libPods-RealtyAppPrototype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD6B2156709EBBAD824AD200 /* libPods-RealtyAppPrototype.a */; };
 		E10268E620D4B4C90078B0AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10268E520D4B4C90078B0AD /* AppDelegate.swift */; };
-		E10268E820D4B4C90078B0AD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10268E720D4B4C90078B0AD /* TableViewController.swift */; };
 		E10268EB20D4B4C90078B0AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10268E920D4B4C90078B0AD /* Main.storyboard */; };
 		E10268F020D4B4C90078B0AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10268EF20D4B4C90078B0AD /* Assets.xcassets */; };
 		E10268F320D4B4C90078B0AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10268F120D4B4C90078B0AD /* LaunchScreen.storyboard */; };
 		E123F26220D60F3D002512AB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123F26120D60F3D002512AB /* LoginViewController.swift */; };
 		E123F26420D610A7002512AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123F26320D610A7002512AB /* User.swift */; };
-		E123F26620D610EA002512AB /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123F26520D610EA002512AB /* Property.swift */; };
+		E123F26620D610EA002512AB /* PropertyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123F26520D610EA002512AB /* PropertyItem.swift */; };
 		E123F26A20D61322002512AB /* OnlineUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123F26920D61322002512AB /* OnlineUsersTableViewController.swift */; };
 		E123F26C20D6224E002512AB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123F26B20D6224E002512AB /* MasterViewController.swift */; };
 		E18F197B20D6AAF2004CD973 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E18F197A20D6AAF2004CD973 /* GoogleService-Info.plist */; };
+		E193CA4920D6E2E30044FBC3 /* PropertyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193CA4820D6E2E30044FBC3 /* PropertyListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3CFC634FBB6E502FEE62DE52 /* Pods_RealtyAppPrototype.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealtyAppPrototype.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76BEA8DB5CA35EE0BBD95AE1 /* Pods-RealtyAppPrototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtyAppPrototype.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealtyAppPrototype/Pods-RealtyAppPrototype.debug.xcconfig"; sourceTree = "<group>"; };
+		DD6B2156709EBBAD824AD200 /* libPods-RealtyAppPrototype.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RealtyAppPrototype.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10268E220D4B4C90078B0AD /* RealtyAppPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealtyAppPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10268E520D4B4C90078B0AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E10268E720D4B4C90078B0AD /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E10268EA20D4B4C90078B0AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E10268EF20D4B4C90078B0AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E10268F220D4B4C90078B0AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E10268F420D4B4C90078B0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E123F26120D60F3D002512AB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E123F26320D610A7002512AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E123F26520D610EA002512AB /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		E123F26520D610EA002512AB /* PropertyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyItem.swift; sourceTree = "<group>"; };
 		E123F26920D61322002512AB /* OnlineUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineUsersTableViewController.swift; sourceTree = "<group>"; };
 		E123F26B20D6224E002512AB /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		E18F197A20D6AAF2004CD973 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E193CA4820D6E2E30044FBC3 /* PropertyListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListTableViewController.swift; sourceTree = "<group>"; };
 		FA5E22E4973CDCB6360D1BC6 /* Pods-RealtyAppPrototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtyAppPrototype.release.xcconfig"; path = "Pods/Target Support Files/Pods-RealtyAppPrototype/Pods-RealtyAppPrototype.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CEA04EDC46721B6205E5471 /* Pods_RealtyAppPrototype.framework in Frameworks */,
+				25908797425EC507301F6D1C /* libPods-RealtyAppPrototype.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +55,7 @@
 		204F6592D3601F7DA5FADD51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3CFC634FBB6E502FEE62DE52 /* Pods_RealtyAppPrototype.framework */,
+				DD6B2156709EBBAD824AD200 /* libPods-RealtyAppPrototype.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				E123F26320D610A7002512AB /* User.swift */,
-				E123F26520D610EA002512AB /* Property.swift */,
+				E123F26520D610EA002512AB /* PropertyItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,10 +105,10 @@
 		E123F26820D612C6002512AB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E10268E720D4B4C90078B0AD /* TableViewController.swift */,
 				E123F26120D60F3D002512AB /* LoginViewController.swift */,
 				E123F26920D61322002512AB /* OnlineUsersTableViewController.swift */,
 				E123F26B20D6224E002512AB /* MasterViewController.swift */,
+				E193CA4820D6E2E30044FBC3 /* PropertyListTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,7 +133,6 @@
 				E10268DE20D4B4C90078B0AD /* Sources */,
 				E10268DF20D4B4C90078B0AD /* Frameworks */,
 				E10268E020D4B4C90078B0AD /* Resources */,
-				E63F44FB1428511AB7C064AF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,28 +209,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E63F44FB1428511AB7C064AF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RealtyAppPrototype/Pods-RealtyAppPrototype-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RealtyAppPrototype/Pods-RealtyAppPrototype-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -239,11 +216,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E123F26620D610EA002512AB /* Property.swift in Sources */,
+				E123F26620D610EA002512AB /* PropertyItem.swift in Sources */,
 				E123F26220D60F3D002512AB /* LoginViewController.swift in Sources */,
-				E10268E820D4B4C90078B0AD /* TableViewController.swift in Sources */,
 				E123F26A20D61322002512AB /* OnlineUsersTableViewController.swift in Sources */,
 				E10268E620D4B4C90078B0AD /* AppDelegate.swift in Sources */,
+				E193CA4920D6E2E30044FBC3 /* PropertyListTableViewController.swift in Sources */,
 				E123F26C20D6224E002512AB /* MasterViewController.swift in Sources */,
 				E123F26420D610A7002512AB /* User.swift in Sources */,
 			);

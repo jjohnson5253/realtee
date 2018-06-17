@@ -1,0 +1,35 @@
+{
+  "properties" : {
+    "property-1" : {
+      "cost" : 12000000,
+      "image-url" : "https://firebasestorage.googleapis.com/v0/b/realty-2dc9a.appspot.com/o/property1.jpeg?alt=media&token=8ee8ffd2-17e4-46fa-8261-6957e81b7766",
+      "location" : "Bel Air, California",
+      "name" : "property-1"
+    },
+    "Property-2" : {
+      "cost" : 1750000,
+      "image-url" : "https://firebasestorage.googleapis.com/v0/b/realty-2dc9a.appspot.com/o/property2.jpeg?alt=media&token=9794a513-7480-4846-aa3d-161d3ca35672",
+      "location" : "Orange County, California",
+      "name" : "property-2"
+    },
+    "Property-3" : {
+      "cost" : 875000,
+      "image-url" : "https://firebasestorage.googleapis.com/v0/b/realty-2dc9a.appspot.com/o/property3.jpeg?alt=media&token=7be4f91f-15cb-44ac-bf9a-a95bce91240f",
+      "location" : "Malibu, California",
+      "name" : "property-3"
+    },
+    "Property-4" : {
+      "cost" : 15000000,
+      "image-url" : "https://firebasestorage.googleapis.com/v0/b/realty-2dc9a.appspot.com/o/property4.jpeg?alt=media&token=93fb0e7b-579f-4d57-96ac-8dc36efd3e4e",
+      "location" : "Los Angeles, California",
+      "name" : "property-4"
+    },
+    "Property-5" : {
+      "cost" : 22000000,
+      "image-url" : "https://firebasestorage.googleapis.com/v0/b/realty-2dc9a.appspot.com/o/property5.jpeg?alt=media&token=ec3bbf98-b113-4286-8572-133964e8da92",
+      "location" : "Bel Air, California",
+      "name" : "property-5"
+    }
+
+  }
+}
