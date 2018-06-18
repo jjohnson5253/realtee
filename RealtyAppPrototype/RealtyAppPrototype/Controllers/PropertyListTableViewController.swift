@@ -14,6 +14,8 @@ class PropertyListTableViewController: UITableViewController {
   // MARK: Constants
   let listToUsers = "ListToUsers"
     
+    let propertyPicturesArray : [UIImage] = [UIImage(named: "property1")!,UIImage(named: "property2")!,UIImage(named: "property3")!,UIImage(named: "property4")!,UIImage(named: "property5")!]
+
   
   // MARK: Properties
   var items: [PropertyItem] = []
@@ -21,6 +23,8 @@ class PropertyListTableViewController: UITableViewController {
   var userCountBarButtonItem: UIBarButtonItem!
   let ref = Database.database().reference(withPath: "properties")
   let usersRef = Database.database().reference(withPath: "online")
+    
+
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
@@ -29,6 +33,7 @@ class PropertyListTableViewController: UITableViewController {
   // MARK: UIViewController Lifecycle  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     
     tableView.allowsMultipleSelectionDuringEditing = false
     
@@ -71,20 +76,28 @@ class PropertyListTableViewController: UITableViewController {
     
     ref.observe(.value, with: { snapshot in
         print(snapshot.value as Any)
-    })
+            })
   }
   
   // MARK: UITableView Delegate methods
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return items.count
   }
+    
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 200.0;//Choose your custom row height
+    }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
     let propertyItem = items[indexPath.row]
     
     cell.textLabel?.text = propertyItem.name
-//    cell.detailTextLabel?.text = propertyItem.addedByUser
+    cell.detailTextLabel?.text = propertyItem.location
+    
+    cell.backgroundView = UIImageView.init(image: UIImage(named: propertyItem.imagename)) 
+//    cell.imageView?.image = UIImage(named: propertyItem.imagename)
     
     toggleCellCheckbox(cell, isCompleted: propertyItem.completed)
     

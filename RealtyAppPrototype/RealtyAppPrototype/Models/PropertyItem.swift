@@ -16,14 +16,16 @@ struct PropertyItem {
     let name: String
     let cost: Int
     let imageurl : String
+    let imagename : String
     var completed: Bool
     
-    init(name: String, location: String, cost : Int, imageurl : String, completed: Bool) {
+    init(name: String, location: String, imagename : String, cost : Int, imageurl : String, completed: Bool) {
         self.ref = nil
         self.imageurl = imageurl
         self.name = name
         self.location = location
         self.cost = cost
+        self.imagename = imagename
         self.completed = completed
     }
     
@@ -34,6 +36,7 @@ struct PropertyItem {
             let location = value["location"] as? String,
             let cost = value["cost"] as? Int,
             let imageurl = value["image-url"] as? String,
+            let imagename = value["image-name"] as? String,
             let completed = value["completed"] as? Bool else {
                 return nil
         }
@@ -43,6 +46,7 @@ struct PropertyItem {
         self.name = name
         self.cost = cost
         self.imageurl = imageurl
+        self.imagename = imagename
         self.completed = completed
     }
     
@@ -52,6 +56,7 @@ struct PropertyItem {
             "location": location,
             "cost": cost,
             "imageurl": imageurl,
+            "imagename": imagename,
             "completed": completed
         ]
     }
