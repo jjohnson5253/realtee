@@ -12,16 +12,20 @@ import Firebase
 struct PropertyItem {
     
     let ref: DatabaseReference?
-    let key: String
+    let location: String
     let name: String
-    let addedByUser: String
+    let cost: Int
+    let imageurl : String
+    let imagename : String
     var completed: Bool
     
-    init(name: String, addedByUser: String, completed: Bool, key: String = "") {
+    init(name: String, location: String, imagename : String, cost : Int, imageurl : String, completed: Bool) {
         self.ref = nil
-        self.key = key
+        self.imageurl = imageurl
         self.name = name
-        self.addedByUser = addedByUser
+        self.location = location
+        self.cost = cost
+        self.imagename = imagename
         self.completed = completed
     }
     
@@ -29,22 +33,30 @@ struct PropertyItem {
         guard
             let value = snapshot.value as? [String: AnyObject],
             let name = value["name"] as? String,
-            let addedByUser = value["addedByUser"] as? String,
+            let location = value["location"] as? String,
+            let cost = value["cost"] as? Int,
+            let imageurl = value["image-url"] as? String,
+            let imagename = value["image-name"] as? String,
             let completed = value["completed"] as? Bool else {
                 return nil
         }
 
         self.ref = snapshot.ref
-        self.key = snapshot.key
+        self.location = location
         self.name = name
-        self.addedByUser = addedByUser
+        self.cost = cost
+        self.imageurl = imageurl
+        self.imagename = imagename
         self.completed = completed
     }
     
     func toAnyObject() -> Any {
         return [
             "name": name,
-            "addedByUser": addedByUser,
+            "location": location,
+            "cost": cost,
+            "imageurl": imageurl,
+            "imagename": imagename,
             "completed": completed
         ]
     }

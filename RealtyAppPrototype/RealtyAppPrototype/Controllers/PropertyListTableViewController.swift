@@ -14,13 +14,17 @@ class PropertyListTableViewController: UITableViewController {
   // MARK: Constants
   let listToUsers = "ListToUsers"
     
+    let propertyPicturesArray : [UIImage] = [UIImage(named: "property1")!,UIImage(named: "property2")!,UIImage(named: "property3")!,UIImage(named: "property4")!,UIImage(named: "property5")!]
+
   
   // MARK: Properties
   var items: [PropertyItem] = []
   var user: User!
   var userCountBarButtonItem: UIBarButtonItem!
-  let ref = Database.database().reference(withPath: "property-items")
+  let ref = Database.database().reference(withPath: "properties")
   let usersRef = Database.database().reference(withPath: "online")
+    
+
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
@@ -29,6 +33,7 @@ class PropertyListTableViewController: UITableViewController {
   // MARK: UIViewController Lifecycle  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     
     tableView.allowsMultipleSelectionDuringEditing = false
     
@@ -68,19 +73,31 @@ class PropertyListTableViewController: UITableViewController {
         self.userCountBarButtonItem?.title = "0"
       }
     })
+    
+    ref.observe(.value, with: { snapshot in
+        print(snapshot.value as Any)
+            })
   }
   
   // MARK: UITableView Delegate methods
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return items.count
   }
+    
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 200.0;//Choose your custom row height
+    }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
     let propertyItem = items[indexPath.row]
     
     cell.textLabel?.text = propertyItem.name
-    cell.detailTextLabel?.text = propertyItem.addedByUser
+    cell.detailTextLabel?.text = propertyItem.location
+    
+    cell.backgroundView = UIImageView.init(image: UIImage(named: propertyItem.imagename)) 
+//    cell.imageView?.image = UIImage(named: propertyItem.imagename)
     
     toggleCellCheckbox(cell, isCompleted: propertyItem.completed)
     
@@ -120,36 +137,36 @@ class PropertyListTableViewController: UITableViewController {
     }
   }
   
-  // MARK: Add Item  
-  @IBAction func addButtonDidTouch(_ sender: AnyObject) {
-    let alert = UIAlertController(title: "Property Item",
-                                  message: "Add an Item",
-                                  preferredStyle: .alert)
-    
-    let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-      guard let textField = alert.textFields?.first,
-        let text = textField.text else { return }
-      
-
-      let propertyItem = PropertyItem(name: text,
-                                    addedByUser: self.user.email,
-                                    completed: false)
-
-      let propertyItemRef = self.ref.child(text.lowercased())
-      
-      propertyItemRef.setValue(propertyItem.toAnyObject())
-    }
-    
-    let cancelAction = UIAlertAction(title: "Cancel",
-                                     style: .cancel)
-    
-    alert.addTextField()
-    
-    alert.addAction(saveAction)
-    alert.addAction(cancelAction)
-    
-    present(alert, animated: true, completion: nil)
-  }
+//  // MARK: Add Item  
+//  @IBAction func addButtonDidTouch(_ sender: AnyObject) {
+//    let alert = UIAlertController(title: "Property Item",
+//                                  message: "Add an Item",
+//                                  preferredStyle: .alert)
+//    
+//    let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+//      guard let textField = alert.textFields?.first,
+//        let text = textField.text else { return }
+//      
+//
+//      let propertyItem = PropertyItem(name: text,
+//                                    addedByUser: self.user.email,
+//                                    completed: false)
+//
+//      let propertyItemRef = self.ref.child(text.lowercased())
+//      
+//      propertyItemRef.setValue(propertyItem.toAnyObject())
+//    }
+//    
+//    let cancelAction = UIAlertAction(title: "Cancel",
+//                                     style: .cancel)
+//    
+//    alert.addTextField()
+//    
+//    alert.addAction(saveAction)
+//    alert.addAction(cancelAction)
+//    
+//    present(alert, animated: true, completion: nil)
+//  }
   
   @objc func userCountButtonDidTouch() {
     performSegue(withIdentifier: listToUsers, sender: nil)
