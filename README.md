@@ -1,2 +1,2 @@
 # realtee
-Prototype realestate listing application built from scratch for IOS
+Prototype Real Estate listing application built for iOS
